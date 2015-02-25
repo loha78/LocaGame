@@ -1,0 +1,4 @@
+function afficherJeu(titre, support){
+	
+	
+}
