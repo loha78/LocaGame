@@ -9,9 +9,9 @@
 		<?php
 			include "Fonction/fonctionPHP.php";
 
- 			//$support = $_POST["support"];
+ 			$support = $_GET["support"];
 
-			 $support = '2';
+// 			 $support = '2';
  
  			//recuperer les jeux par support
  			$co = connexion("locagames");
@@ -27,7 +27,7 @@
  					$img = $tab["imageJeu"];
  					$numJeu = $tab["numJeu"];
 					echo "<tr>";
- 					echo "<td><a href=detailJeu.php?codeJeu=$numJeu&support=$support><img src='$img' width=200px/></a></td><td><a href=detailJeu.php?codeJeu=$numJeu>".$tab["titreJeu"]."</a></td>";
+ 					echo "<td><a href=detailJeu.php?codeJeu=$numJeu&support=$support><img src='$img' width=200px/></a></td><td><a href=detailJeu.php?codeJeu=$numJeu&support=$support>".$tab["titreJeu"]."</a></td>";
 				 }
 			 ?>
 			</table>
