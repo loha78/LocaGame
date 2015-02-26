@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 25 Février 2015 à 17:18
+-- Généré le :  Jeu 26 Février 2015 à 09:49
 -- Version du serveur :  5.6.20
 -- Version de PHP :  5.5.15
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de données :  `locagame`
+-- Base de données :  `locagames`
 --
 
 -- --------------------------------------------------------
@@ -172,7 +172,7 @@ CREATE TABLE IF NOT EXISTS `titre` (
 `numJeu` int(5) NOT NULL,
   `titreJeu` varchar(20) NOT NULL,
   `descriptionJeu` varchar(500) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
 
 --
 -- Contenu de la table `titre`
@@ -247,7 +247,7 @@ MODIFY `numSupport` int(1) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT pour la table `titre`
 --
 ALTER TABLE `titre`
-MODIFY `numJeu` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
+MODIFY `numJeu` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 --
 -- Contraintes pour les tables exportées
 --
