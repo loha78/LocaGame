@@ -5,11 +5,13 @@
 	<head>
 		<title> LocaGame : Site de location de jeux videos </title>
 		<?php 
-			$nom = $_POST["nom"];
+		session_start();	
+		$login = $_SESSION["login"];
 		?>
 	</head>
 	
 	<body>
-	
+		<h1> Bienvenue <?php echo $login ?></h1>
+		<?php echo $_SESSION["adresse"] ?>
 	</body>
 </html>

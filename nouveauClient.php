@@ -10,35 +10,45 @@
 	<body>
 		<div id="formulaire">
 			<h1>Créez un compte LocaGame</h1>
-			<form action="interfaceClient.php" method="post" name="sign" id="formSign" onSubmit="return verifForm();" >
+			<form action="enregistrerClient.php" method="post" name="sign" id="formSign" onSubmit="return verifForm();" >
 				
 				<label>Login (pseudo) : </label>
 					<input name="login" id="login" type="text" maxlength="30" value="" />
 				<br />
 	
 				<label>Mot de passe :</label>
-				<input name="password" class="input" id="password" type="password"
-					maxlength="25" value="" />
+					<input name="password" class="input" id="password" type="password" maxlength="25" value="" />
 				<br />
 	
-	
-				<label for="confirm_password">Ressaisir mot de passe :</label>
-				<input name="confirm_password" class="input" id="confirm_password"
+				<label>Ressaisir mot de passe :</label>
+					<input name="confirm_password" class="input" id="confirm_password"
 					type="password" maxlength="25" value="" onChange="verifNewPassword();"/>
 				<br />
 	
 				<label>Nom : </label>
-					<input name="nom" class='input' id="nom" maxlength="25"
-					type="text" value="" />
+					<input name="nom" class='input' id="nom" maxlength="25" type="text" value="" />
 				<br />
 				
 				<label>Prénom : </label>
-					<input name="prenom" class="input" id="prenom" maxlength="25"
-					type="text" value="" />
+					<input name="prenom" class="input" id="prenom" maxlength="25" type="text" value="" />
 				<br />
 				
-				<label>Adresse : </label>
-					<textarea name="adresse" rows="3" cols="88" id="adresse"></textarea>
+				<label>Adresse :  </label>
+					<label>Numero : </label>
+						<input name="numRue" class='input' id="numRue" maxlength="10" type="text" value="" />
+					<br />
+				
+					<label>Rue : </label>
+						<textarea rows="1" cols="50" name="rue" class="input" id="rue" maxlength="50" value=""></textarea>
+					<br />
+					
+					<label>Code Postal : </label>
+						<input name="cp" class='input' id="cp" maxlength="5" type="text" value="" />
+				<br />
+				
+					<label>Ville : </label>
+						<input name="ville" class="input" id="ville" maxlength="50" type="text" value="" />
+				<br />
 				<br />
 				
 				<input type="submit" value="Inscription" />
