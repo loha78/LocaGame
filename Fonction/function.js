@@ -1,4 +1,0 @@
-function afficherJeu(titre, support){
-	
-	
-}

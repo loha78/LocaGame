@@ -4,6 +4,7 @@
 
 	<head>
 		<title> LocaGame : Site de location de jeux videos </title>
+		<link rel="stylesheet" type="text/css" href="style/style.css">
 		<?php 
 		session_start();	
 		$login = $_SESSION["login"];

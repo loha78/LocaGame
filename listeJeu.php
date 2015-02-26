@@ -6,6 +6,7 @@
 
 	<head>
 		<title> LocaGame : Tous nos Jeux par console</title>
+		<link rel="stylesheet" type="text/css" href="style/style.css">
 		<?php
 			include "Fonction/fonctionPHP.php";
 

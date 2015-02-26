@@ -4,6 +4,7 @@
 
 	<head>
 		<title> LocaGame : Details du Jeu</title>
+		<link rel="stylesheet" type="text/css" href="style/style.css">
 		
 		<?php
 			include "Fonction/fonctionPHP.php";

@@ -15,3 +15,10 @@ function verifForm(){
 	}
 	else return (verifNewPassword());	
 }
+
+function verifFormLogin(){
+	if ((identify.login.value == "") || (identify.password.value == "")){
+		alert("Login et Mot de passe non valides");
+		return false;
+	}
+}

@@ -27,4 +27,8 @@ function rechercherDispo($co, $numJeu, $support){
 	$resultat = $total[0] - $enLocation[0];
 	return $resultat;
 }
+
+
+
+
 ?>
