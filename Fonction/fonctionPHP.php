@@ -18,4 +18,13 @@ function rechercherNumJeu($co, $titreJeu){
 	$resultat = mysqli_query($co,"SELECT t.numJeu FROM titre t WHERE t.titreJeu ='$titreJeu'") or die("erreur requete rechercherUnJeu");
 	return $resultat;
 }
+
+function rechercherDispo($co, $numJeu, $support){
+	$total = mysqli_query($co,"SELECT COUNT(*) FROM exemplaire e WHERE e.numJeu='$numJeu' AND e.support='$support'") or die("erreur requete rechercherDispo_Step1");
+	$enLocation = mysqli_query($co,"SELECT COUNT(*) FROM exemplaire e, location l WHERE e.numExemplaire = l.numExemplaire AND e.numJeu='$numJeu' AND e.support='$support' AND l.dateRetour IS NULL") or die("erreur requete rechercherDispo_Step2");
+	$total = mysqli_fetch_row($total);
+	$enLocation = mysqli_fetch_row($enLocation);
+	$resultat = $total[0] - $enLocation[0];
+	return $resultat;
+}
 ?>

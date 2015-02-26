@@ -19,6 +19,9 @@
 			$img = $tab["imageJeu"];
 			$title = $tab["titreJeu"];
 			$description = $tab["descriptionJeu"];
+			
+			//recuperer le nombre de jeu disponible
+			$nbJeu = rechercherDispo($co, $numJeu, $support);
 		?>	
 	</head>
 	<body>
@@ -67,8 +70,21 @@
 					<div id="cover"><img src='<?php echo $img ?>' width=200px/></div>
 					<div id="title"><?php echo $title?></div>
 					<div id="description"><?php echo $description?></div>
+					<div id="disponibilite"><?php echo "Jeux disponibles : ". $nbJeu?></div>
+					<?php 
+					if ($nbJeu>0){
+					?>
+					<div id="bouton"><input type="submit" value="Louez Moi !" onclick=""/></div>
+					<?php 
+					} else { 
+					?>
+					<div id="bouton"><input type="submit" value="Indisponible" onclick=""/></div>
+					<?php 
+					}
+					?>
 				</div>
 			</div>
+		</div>
 	</body>
 </html>
 <?php 

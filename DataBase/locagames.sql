@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 26 Février 2015 à 14:09
+-- Généré le :  Jeu 26 Février 2015 à 17:32
 -- Version du serveur :  5.6.20
 -- Version de PHP :  5.5.15
 
@@ -59,42 +59,42 @@ CREATE TABLE IF NOT EXISTS `exemplaire` (
 --
 
 INSERT INTO `exemplaire` (`numExemplaire`, `numJeu`, `support`) VALUES
-('BFH01', 4, 'PS4'),
-('BFH02', 4, 'XB1'),
-('COD01', 5, 'PS4'),
-('COD02', 5, 'XB1'),
-('DBX01', 6, 'PS4'),
-('DBX02', 6, 'XB1'),
-('FC001', 1, 'PS4'),
-('FC002', 1, 'PS4'),
-('FC003', 1, 'XB1'),
-('FC004', 1, 'XB1'),
-('FFXV1', 7, 'PS4'),
-('FFXV2', 7, 'PS4'),
-('FOR01', 14, 'XB1'),
-('FOR02', 14, 'XB1'),
-('HAL01', 13, 'XB1'),
-('HAL02', 13, 'XB1'),
-('LCO01', 12, 'PS4'),
-('LCO02', 12, 'PS4'),
-('MC001', 2, 'PS4'),
-('MC002', 2, 'PS4'),
-('MC003', 2, 'XB1'),
-('MC004', 2, 'XB1'),
-('MC005', 2, 'XB1'),
-('MKX01', 8, 'PS4'),
-('MKX02', 8, 'XB1'),
-('PES01', 9, 'PS4'),
-('PES02', 9, 'XB1'),
-('TC001', 3, 'PS4'),
-('TC002', 3, 'PS4'),
-('TC003', 3, 'PS4'),
-('TC004', 3, 'XB1'),
-('TC005', 3, 'XB1'),
-('TEW01', 10, 'PS4'),
-('TEW02', 9, 'XB1'),
-('TLOU1', 11, 'PS4'),
-('TLOU2', 11, 'PS4');
+('BFH01', 4, '1'),
+('BFH02', 4, '2'),
+('COD01', 5, '1'),
+('COD02', 5, '2'),
+('DBX01', 6, '1'),
+('DBX02', 6, '2'),
+('FC001', 1, '1'),
+('FC002', 1, '1'),
+('FC003', 1, '2'),
+('FC004', 1, '2'),
+('FFXV1', 7, '1'),
+('FFXV2', 7, '1'),
+('FOR01', 14, '2'),
+('FOR02', 14, '2'),
+('HAL01', 13, '2'),
+('HAL02', 13, '2'),
+('LCO01', 12, '1'),
+('LCO02', 12, '1'),
+('MC001', 2, '1'),
+('MC002', 2, '1'),
+('MC003', 2, '2'),
+('MC004', 2, '2'),
+('MC005', 2, '2'),
+('MKX01', 8, '1'),
+('MKX02', 8, '2'),
+('PES01', 9, '1'),
+('PES02', 9, '2'),
+('TC001', 3, '1'),
+('TC002', 3, '1'),
+('TC003', 3, '1'),
+('TC004', 3, '2'),
+('TC005', 3, '2'),
+('TEW01', 10, '1'),
+('TEW02', 9, '2'),
+('TLOU1', 11, '1'),
+('TLOU2', 11, '1');
 
 -- --------------------------------------------------------
 
@@ -146,9 +146,18 @@ CREATE TABLE IF NOT EXISTS `location` (
   `login` varchar(20) NOT NULL,
   `numExemplaire` varchar(5) NOT NULL,
   `dateLocation` date NOT NULL,
-  `dateEnvoi` date NOT NULL,
-  `dateRetour` date NOT NULL
+  `dateEnvoi` date DEFAULT NULL,
+  `dateRetour` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `location`
+--
+
+INSERT INTO `location` (`login`, `numExemplaire`, `dateLocation`, `dateEnvoi`, `dateRetour`) VALUES
+('loha78', 'BFH01', '2015-02-26', '2015-02-26', NULL),
+('loha78', 'BFH02', '2015-02-26', '2015-02-26', NULL),
+('loha78', 'FC001', '2015-02-26', '2015-02-26', NULL);
 
 -- --------------------------------------------------------
 
