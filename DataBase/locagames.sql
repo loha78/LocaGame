@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 26 Février 2015 à 13:29
--- Version du serveur :  5.5.39
--- Version de PHP :  5.4.31
+-- Généré le :  Jeu 26 Février 2015 à 14:09
+-- Version du serveur :  5.6.20
+-- Version de PHP :  5.5.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -127,7 +127,7 @@ INSERT INTO `jeu` (`numJeu`, `support`, `imageJeu`) VALUES
 (6, 2, 'img/XB1/DragonBallXenoverse_XboxOne.jpg'),
 (7, 1, 'img/PS4/FFXV_PS4.jpg'),
 (8, 1, 'img/PS4/MortalKombatX_PS4.jpg'),
-(8, 2, 'mg/PS4/MortalKombatX_XboxOne.jpg'),
+(8, 2, 'img/XB1/MortalKombatX_XboxOne.jpg'),
 (9, 1, 'img/PS4/Pes2015_PS4.jpg'),
 (9, 2, 'img/XB1/Pes2015_XboxOne.jpg'),
 (10, 1, 'img/PS4/TheEvilWithin_PS4.jpg'),
@@ -186,20 +186,20 @@ CREATE TABLE IF NOT EXISTS `titre` (
 --
 
 INSERT INTO `titre` (`numJeu`, `titreJeu`, `descriptionJeu`) VALUES
-(1, 'Far Cry', ''),
-(2, 'Minecraft', ''),
-(3, 'The Crew', ''),
-(4, 'Battlefield Hardline', ''),
-(5, 'Call Of Duty', ''),
-(6, 'Dragon Ball Xenovers', ''),
-(7, 'Final Fanatsy XV', ''),
-(8, 'Mortal Kombat X', ''),
-(9, 'PES 2015', ''),
-(10, 'The Evil Within', ''),
-(11, 'The Last Of Us', ''),
-(12, 'Lara Croft Osiris', ''),
-(13, 'Halo', ''),
-(14, 'Forza 2', '');
+(1, 'Far Cry', 'L''histoire de Far Cry 4 se déroule dans la région fictive de Kyrat en Himalaya. Le joueur incarne Ajay Ghale, revenu sur sa terre d''origine pour disperser les cendres de sa mère. Il se retrouvera rapidement plongé au cœur d''une guerre civile entre les rebelles du Sentier d''Or et un tyran autoproclamé nommé Pagan Min4. Le jeu contient 4 fins, dont deux alternatives.'),
+(2, 'Minecraft', 'Minecraft est un jeu vidéo indépendant de type « bac à sable » (construction complètement libre - sandbox en anglais).Ce jeu vidéo plonge le joueur dans un univers réaliste mais cubique : tout est composé de blocs en 3D pixelisés.'),
+(3, 'The Crew', 'The Crew est un jeu de course arcade révolutionnaire. Il vous entraîne, dans une course effrénée au sein d''un immense monde ouvert représentant les USA.'),
+(4, 'Battlefield Hardline', 'Un affrontement entre criminels et policiers dont rêvaient de nombreux joueurs dans un monde ou crime et vengeance sont omniprésents. Une mise en scène du gameplay spectaculaire à l’image des grandes séries policières.'),
+(5, 'Call Of Duty', 'Call of Duty : Advanced Warfare, développé par Sledgehammer Games (co-développeur de Call of Duty : Modern Warfare 3), inaugure le premier cycle de trois ans de développement next-gen dans l''histoire de la franchise. Call of Duty : Advanced Warfare, dépeint les champs de bataille du futur, où la technologie et la stratégie ont évolué, et nous ont conduit vers une nouvelle ère de combat pour la série.'),
+(6, 'Dragon Ball Xenovers', 'Centré sur un nouveau personnage lié à Yamcha, Trunks et bien d’autres, DRAGON BALL XENOVERSE vous replongera dans les plus célèbres combats de la série. Parviendrez-vous à modifier le cours de l’Histoire ? Vous découvrirez également une cité mystérieuse, une jouabilité totalement remaniée, de splendides animations et bien d’autres nouveautés qui seront bien dévoilées !'),
+(7, 'Final Fanatsy XV', 'Bientôt disponible.\r\nCommandez-le maintenant et nous vous l''enverrons dès qu''il sera disponible.'),
+(8, 'Mortal Kombat X', 'Mortal Kombat X, le prochain opus de la légendaire série de jeux de combat de NetherRealm Studios, révolutionne la franchise. Le jeu adopte une direction artistique inédite et propose un tout nouveau gameplay pour offrir aux joueurs l''expérience Mortal Kombat ultime. Pour la première fois, Mortal Kombat X permet aux joueurs de choisir entre plusieurs variations pour chaque personnage, ce qui a un impact sur la stratégie et le style de combat.'),
+(9, 'PES 2015', '"Le terrain nous appartient !" est la philosophie qui domine PES 2015. Grace aux efforts conjugués des équipes PES de Tokyo et Windsor, l''objectif a été de recréer les sensations uniques et incroyables du football de haut niveau. PES 2015 retourne aux vraies valeurs de PES à savoir des contrôles très réactifs et un gameplay de renom où les utilisateurs ont un contrôle total et sans restriction sur la façon dont ils jouent.'),
+(10, 'The Evil Within', 'Lors de leur enquête sur la scène d''un horrible carnage, le détective Sebastian Castellanos et ses partenaires sont confrontés à une mystérieuse et puissante force. Après avoir été témoin du massacre des autres officiers, Sebastian est pris en embuscade et assommé. À son réveil, il se retrouve dans un monde malsain dans lequel d''hideuses créatures rôdent entre les cadavres.'),
+(11, 'The Last Of Us', 'Accompagnez Joel et Ellie à travers leur périple dans des Etats-Unis dévastés où survivre face aux infectés et aux hommes est devenu le seul objectif. Et découvrez également le passé d’Ellie dans le chapitre Left Behind inclus dans cette édition.'),
+(12, 'Lara Croft Osiris', 'Lara Croft and the Temple of Osiris, suite du jeu encensé par la critique Lara Croft and the Guardian of Light, propose pour la toute première fois de jouer jusqu''à quatre en coopération avec Lara Croft. Les joueurs devront travailler de concert pour battre des hordes d''ennemis venus tout droit du royaume des morts égyptien, résoudre quantité d''énigmes complexes et déjouer des pièges mortels, au cours d''une histoire originale servie par des graphismes époustouflants.'),
+(13, 'Halo', 'La compilation Halo Master Chief Collection regroupe les quatre épisodes de la saga qui ont marqué une génération entière de gamers, remasterisés en 1080p et en 60FPS. Plus qu’un simple portage HD, Halo : The Master Chief Collection bénéficie d’ajouts de taille. Un must-have pour tout possesseur d’une Xbox One !'),
+(14, 'Forza 2', 'Découvrez les magnifiques paysages de la côte méditerranéenne au volant de plus d’une centaine de voitures et confrontez-vous pour la première fois dans la franchise aux conditions météorologiques changeantes qui affecterons votre conduite : Orages, tempêtes et brume n’attendent que vous ! Explorez une carte immense totalement ouverte pour une expérience de conduite plus libre que jamais !');
 
 --
 -- Index pour les tables exportées
