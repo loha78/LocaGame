@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 26 Février 2015 à 09:49
--- Version du serveur :  5.6.20
--- Version de PHP :  5.5.15
+-- Généré le :  Jeu 26 Février 2015 à 13:21
+-- Version du serveur :  5.5.39
+-- Version de PHP :  5.4.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -34,6 +34,13 @@ CREATE TABLE IF NOT EXISTS `client` (
   `adresse` varchar(100) NOT NULL,
   `isAdmin` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `client`
+--
+
+INSERT INTO `client` (`login`, `nomClient`, `prenomClient`, `motDePasse`, `adresse`, `isAdmin`) VALUES
+('loha78', 'Tomponiony', 'Loha', 'toto', '11 Allee du Clos 78000 Versailles', 0);
 
 -- --------------------------------------------------------
 
