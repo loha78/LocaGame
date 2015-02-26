@@ -9,6 +9,8 @@
 	<body>
 		<!-- Bloc principal de contenu  -->
 		<div class="bloc_central">
+			
+			<!--  Bandeau superieur du haut -->
 			<div class="header">
 				<img src="img/banniere_jeux.png" alt="Image d'entête">
 				<div class="formConnexion">
@@ -27,6 +29,7 @@
 				</div>
 			</div>
 		
+			<!--  Barre laterale a gauche -->
 			<div class="lateral">
 				<h2>Selectionner une plateforme ou chercher un jeu:</h2><br/>
 				<form id="rechercherJeu" action="rechercherJeu.php" method="post" onSubmit="return verifFormRecherche();">
@@ -42,6 +45,16 @@
 				</form>
 				<a href="listeJeu.php?support=1"><img id="logoSupport" src="img/PS4/logo_ps4.jpg" alt="Logo de la PS4"></img></a><br/>
 				<a href="listeJeu.php?support=2"><img id="logoSupport" src="img/XB1/logo_xb1.jpg" alt="Logo de la XB1"></img></a>
+			</div>
+			
+			<!--  Bloc central de la page -->
+			<div class="central">
+				<h1> Ici va se trouver le corps de la page</h1>
+				<h3> Des schemas et du blabla</h3>
+			</div>
+			
+			<div class="vide">
+				
 			</div>
 		</div>	
 	</body>
