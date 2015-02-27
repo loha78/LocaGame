@@ -30,10 +30,10 @@
 					
 			<!--  Bandeau superieur du haut -->
 			<div class="header">
-	<!-- 			<img src="img/banniere_jeux.png" alt="Image d'ent�te"> -->
-			<?php 	if ($_SESSION["current"] == "init"){ 
+				<p><a id="headerClickable" href="index.php"></a></p>
+				<?php 	if ($_SESSION["current"] == "init"){ 
 				
-					?>	
+				?>	
 					<div id="formConnexion">
 						<form name="identify" action="verifierLogin.php" method="post" onSubmit=" return verifFormLogin();" >
 						<p>
@@ -64,21 +64,21 @@
 				
 			<!--  Barre laterale a gauche -->
 			<div class="lateral">
-					<p id="lTitre">Selectionner une plateforme ou chercher un jeu: </p>
-					<form name="rechercheJeu" id="rechercheJeu" action="rechercherJeu.php" method="post" onSubmit="return verifFormRecherche();">
-						<label class="formLib"> Titre </label>
-							<input id="inRecherche" type="text" name="titre" value="" maxlength="30" width=20px/>
-						<label class="formLib"> Plateforme </label>
-							<select name="support">
-								<option value=""> </option>
-								<option value="1">PlayStation 4</option>
-								<option value="2">XBox One</option>
-							</select>
-						<input type="submit" value="Rechercher"/>
-					</form>
-					<div class="logoSupport"><a href="listeJeu.php?support=1"><img class="logo" src="img/PS4/logo_ps4.jpg" alt="Logo de la PS4"></img></a></div>
-					<div class="logoSupport"><a href="listeJeu.php?support=2"><img class="logo" src="img/XB1/logo_xb1.jpg" alt="Logo de la XB1"></img></a></div>
-				</div>
+				<p id="lTitre">Selectionner une plateforme ou chercher un jeu: </p>
+				<form name="rechercheJeu" id="rechercheJeu" action="rechercherJeu.php" method="post" onSubmit="return verifFormRecherche();">
+					<label class="formLib"> Titre </label>
+						<input class="inRecherche" type="text" name="titre" value="" maxlength="30" width=20px/>
+					<label class="formLib"> Plateforme </label>
+						<select name="support">
+							<option value=""> </option>
+							<option value="1">PlayStation 4</option>
+							<option value="2">XBox One</option>
+						</select>
+					<input type="submit" value="Rechercher"/>
+				</form>
+				<div class="logoSupport"><a href="listeJeu.php?support=1"><img class="logo" src="img/PS4/logo_ps4.jpg" alt="Logo de la PS4"></img></a></div>
+				<div class="logoSupport"><a href="listeJeu.php?support=2"><img class="logo" src="img/XB1/logo_xb1.jpg" alt="Logo de la XB1"></img></a></div>
+			</div>
 				
 			<!--  Bloc central de la page -->
 			<div class="central">
