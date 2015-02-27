@@ -25,7 +25,7 @@
 			
 			<!--  Bandeau superieur du haut -->
 			<div class="header">
-				<img src="img/banniere_jeux.png" alt="Image d'entête">
+				<img src="img/banniere_jeux.png" alt="Image d'entÃªte">
 				<div class="formConnexion">
 					<form name="identify" action="#" method="post" >
 					<p>

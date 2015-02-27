@@ -22,3 +22,14 @@ function verifFormLogin(){
 		return false;
 	}
 }
+
+function verifFormRecherche(){
+	if (rechercheJeu.titre.value == ""){
+		alert("Veuillez specifier un critère de recherche!");
+		return false;
+	} 
+	if (rechercheJeu.support.value == ""){
+		alert("Veuillez selectionner un support!");
+		return false;
+	}
+}

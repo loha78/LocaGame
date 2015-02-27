@@ -4,6 +4,7 @@
 
 	<head>
 		<title> LocaGame : Site de location de jeux videos </title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<link rel="stylesheet" type="text/css" href="style/style.css">
 		<script type="text/javascript" src="Fonction/verification.js"></script>
 		<?php 
@@ -25,68 +26,68 @@
 	
 	<body>
 		<!-- Bloc principal de contenu  -->
-		<div class="bloc_central">
-			
+		<div id="bloc_principal">
+					
 			<!--  Bandeau superieur du haut -->
 			<div class="header">
-				<img src="img/banniere_jeux.png" alt="Image d'entête">
-				<?php if ($_SESSION["current"] == "init"){ 
+	<!-- 			<img src="img/banniere_jeux.png" alt="Image d'entï¿½te"> -->
+			<?php 	if ($_SESSION["current"] == "init"){ 
 				
 					?>	
-					<div class="formConnexion">
+					<div id="formConnexion">
 						<form name="identify" action="verifierLogin.php" method="post" onSubmit=" return verifFormLogin();" >
 						<p>
-							<label>Login</label>
-								<input type="text" name="login" />
-							<label>Mot de passe</label>
-								<input type="text" name="password" />
-							<input type="submit" value="Connexion" />
+							<label class="titreConnexion">Login</label>
+								<input type="text" name="login" /><br/>
+							<label class="titreConnexion">Mot de passe</label>
+								<input type="text" name="password" /><br/>
+							<input id="buttonConnexion" type="submit" value="Connexion" />
 						</p>
 						</form>
 					</div>
-					<div class="creerCompte">
-						<a href="nouveauClient.php">Creer un nouveau compte</a>
+					<div class="client">
+							<a href="nouveauClient.php">Creer un nouveau compte</a>
 					</div>
 				<?php 
-				}
-				else{
+					}
+					else{
 					?>
-					<div class="loginClient">
-						Bienvenue <?php echo $login ?> <br/>
+					<div class="client">
+						Bienvenue <?php echo $login ?> 
 						<form action="logout.php" name="deconnecter">
-							<input type="submit" name="deconnecter" value="Deconnecter" />
-					</div>
-				<?php 
-				}
-				?>
-			</div>
-		
+								<input type="submit" name="deconnecter" value="Deconnexion" />
+						</div>
+					<?php 
+						}
+					?>
+			</div>	
+				
 			<!--  Barre laterale a gauche -->
 			<div class="lateral">
-				Selectionner une plateforme ou chercher un jeu:<br/>
-				<form id="rechercherJeu" action="rechercherJeu.php" method="post" onSubmit="return verifFormRecherche();">
-					<label id="formLib"> Titre :</label>
-						<input type="text" name="titre" value="" maxlength="30"/>
-					<label id="formLib"> Plateforme :</label>
-						<select name="support">
-							<option value=null> </option>
-							<option value="1">PlayStation 4</option>
-							<option value="2">XBox One</option>
-						</select>
-					<input type="submit" value="Rechercher"/>
-				</form>
-				<div class="logoSupport"><a href="listeJeu.php?support=1"><img src="img/PS4/logo_ps4.jpg" alt="Logo de la PS4"></img></a></div>
-				<div class="logoSupport"><a href="listeJeu.php?support=2"><img src="img/XB1/logo_xb1.jpg" alt="Logo de la XB1"></img></a></div>
-			</div>
-			
+					<p id="lTitre">Selectionner une plateforme ou chercher un jeu: </p>
+					<form name="rechercheJeu" id="rechercheJeu" action="rechercherJeu.php" method="post" onSubmit="return verifFormRecherche();">
+						<label class="formLib"> Titre </label>
+							<input id="inRecherche" type="text" name="titre" value="" maxlength="30" width=20px/>
+						<label class="formLib"> Plateforme </label>
+							<select name="support">
+								<option value=""> </option>
+								<option value="1">PlayStation 4</option>
+								<option value="2">XBox One</option>
+							</select>
+						<input type="submit" value="Rechercher"/>
+					</form>
+					<div class="logoSupport"><a href="listeJeu.php?support=1"><img class="logo" src="img/PS4/logo_ps4.jpg" alt="Logo de la PS4"></img></a></div>
+					<div class="logoSupport"><a href="listeJeu.php?support=2"><img class="logo" src="img/XB1/logo_xb1.jpg" alt="Logo de la XB1"></img></a></div>
+				</div>
+				
 			<!--  Bloc central de la page -->
 			<div class="central">
-				<h1> Ici va se trouver le corps de la page</h1>
-				<h3> Des schemas et du blabla</h3>
+					<h1> Ici va se trouver le corps de la page</h1>
+					<h3> Des schemas et du blabla et des caractï¿½res spï¿½ciaux $ï¿½%ï¿½ï¿½#ï¿½</h3>
 			</div>
-			
-			<div class="vide">
 				
+			<div class="vide">
+						
 			</div>
 		</div>	
 	</body>

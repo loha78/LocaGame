@@ -2,54 +2,93 @@
 
 body {
     font-family: Arial, Verdana;
-	background-image: url("plage_fond.jpg");
+	background-image: url("background.jpg");
     background-color: #CECECE;
+    width: 100%;
 }
 
-.header{
-	width: 100%;
-}
-
-
-.bloc_central {
-	margin-top: 3%;
-	margin-left: auto;
-	margin-right: auto;
-	width: 83%;
+#bloc_principal {
+	position: relative;
+	margin: 0 auto;
+	padding: 0;
+	width: 800px;
+	height: 100%;
 	background-color: white ;	
 }
 
+.header{
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 200px;
+	background: url("../img/banniere_jeux.png"); 
+}
+
+
+
+#formConnexion {
+	text-align:right;
+	color:#c0c0c0;
+	margin:10px;
+	padding-top:110px;
+	padding-left:215px;
+}
+
+.titreConnexion {
+	background-color: black;
+}
+
+.client {
+	text-align: right;
+	padding-left:215px;	
+	color:#c0c0c0;
+	margin:10px;
+}
+
+#buttonConnexion {
+	margin-right: 30px;
+}
+
 .lateral {
+	text-align: center;
+	display: block;
+	position: relative;
 	margin: auto;
-	padding-left: 0px;
-	padding-right: 0px;
 	float: left ;
-	width: 28%;
+	width: 20%;
+	height: auto;
 	border-right: 1px solid black;
 	border-bottom: 1px solid black;
-	background-color: #c60909;
+	background-color: #c0c0c0;
 }
 
-img {
-	max-width: 100%;
+#lTitre {
+	color: #800000;
 }
 
-h2 {
-	font-size: 100%;
-	font-weight: bold;
-	color: Black;
-	text-align: left;
-	text-indent: 5px;
+#inRecherche {
+	width: 80%;
 }
-.logoSupport.img{
-	width: 100%;
-	float: left;
+
+.formLib {
+	color:#c0c0c0;
+	background-color: black;
+}
+
+.logo{
+	width: 80%;
+	display: block; 
+	margin: auto;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 
-.centre {
+.central {
 	padding-left: 5px;
-	margin-left: 5px;
+	margin-top: 50px;
+	margin-left: 10px;
 	text-align: left;
 	text-indent: 5px;
 }
