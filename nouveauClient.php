@@ -39,7 +39,7 @@
 							<label class="titreConnexion">Login</label>
 								<input type="text" name="login" /><br/>
 							<label class="titreConnexion">Mot de passe</label>
-								<input type="text" name="password" /><br/>
+								<input type="password" name="password" /><br/>
 							<input id="buttonConnexion" type="submit" value="Connexion" />
 						</p>
 						</form>
@@ -121,7 +121,7 @@
 								<input class="inEnre" name="password" id="password" type="password" maxlength="25" value="" />
 							</p>
 				
-							<p><label>Ressaisir mot de passe :</label><br/>
+							<p><label>Confirmer mot de passe :</label><br/>
 								<input class="inEnre" name="confirm_password" id="confirm_password" type="password" maxlength="25" value="" onChange="verifNewPassword();"/>
 							</p>
 							<p class="buttonInscription"><input type="submit" value="Inscription" /></p>

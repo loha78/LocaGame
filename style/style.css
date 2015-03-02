@@ -87,9 +87,9 @@ body {
 
 
 .central {
-	padding-left: 10px;
+	width : 78%;
 	margin-top: 50px;
-	margin-left: 10px;
+	margin-left: 40px;
 	text-align: left;
 }
 
@@ -138,7 +138,21 @@ body {
 	text-align: center;
 }
 
+#tabTitre {
+	font-size: 14pt;
+	font-weight: bold;
+	color: #800000;
+}
 
+.titreCentral {
+	font-size: 20pt;
+	font-weight: bold;
+	color: #400080;
+}
+
+.imageTab {
+	width=150px;
+}
 .vide{
 	clear:both;
 	float: bottom ;

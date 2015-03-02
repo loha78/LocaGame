@@ -29,6 +29,4 @@ function rechercherDispo($co, $numJeu, $support){
 }
 
 
-
-
 ?>

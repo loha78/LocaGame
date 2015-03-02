@@ -31,7 +31,8 @@
 			<!--  Bandeau superieur du haut -->
 			<div class="header">
 				<p><a id="headerClickable" href="index.php"></a></p>
-				<?php 	if ($_SESSION["current"] == "init"){ 
+				<?php	
+					if ($_SESSION["current"] == "init"){ 
 				
 				?>	
 					<div id="formConnexion">
@@ -40,26 +41,27 @@
 							<label class="titreConnexion">Login</label>
 								<input type="text" name="login" /><br/>
 							<label class="titreConnexion">Mot de passe</label>
-								<input type="text" name="password" /><br/>
+								<input type="password" name="password" /><br/>
 							<input id="buttonConnexion" type="submit" value="Connexion" />
 						</p>
 						</form>
 					</div>
 					<div class="client">
-							<a href="nouveauClient.php">Creer un nouveau compte</a>
+						<a href="nouveauClient.php">Creer un nouveau compte</a>
 					</div>
 				<?php 
 					}
 					else{
-					?>
+				?>
 					<div class="client">
 						Bienvenue <?php echo $login ?> 
 						<form action="logout.php" name="deconnecter">
-								<input type="submit" name="deconnecter" value="Deconnexion" />
-						</div>
-					<?php 
-						}
-					?>
+							<input type="submit" name="deconnecter" value="Deconnexion" />
+						</form>
+					</div>
+				<?php 
+					}
+				?>
 			</div>	
 				
 			<!--  Barre laterale a gauche -->
@@ -83,12 +85,10 @@
 			<!--  Bloc central de la page -->
 			<div class="central">
 					<h1> Ici va se trouver le corps de la page</h1>
-					<h3> Des schemas et du blabla et des caract�res sp�ciaux $�%��#�</h3>
+					<h3> Des schemas et du blabla et des caractères spéciaux &é"ô%àç </h3>
 			</div>
 				
-			<div class="vide">
-						
-			</div>
+			<div class="vide"></div>
 		</div>	
 	</body>
 </html>
