@@ -177,3 +177,16 @@ li {
 	text-align: center;
 	padding-top: 10px;
 }
+
+.libP{
+	font-style: bold;
+	font-size: 18pt;
+	text-align: center;
+	color: #800000;	
+}
+
+.titP {
+	text-align: center;
+}
+
+

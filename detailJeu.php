@@ -23,13 +23,28 @@
 				}
 			}
 			
+			$session = "notSet";
 			if (! isset($_SESSION["current"])){
 				$_SESSION["current"] = "init";
+				$session = $_SESSION["current"];
 			}
 		
-
-			$numJeu = $_GET["codeJeu"];
-			$support = $_GET["support"];
+			if (isset($_SESSION["jeu"])){
+				$numJeu=$_SESSION["jeu"];
+			}
+			else{
+				$numJeu = $_GET["codeJeu"];
+			}
+			
+			if (isset($_SESSION["console"])){
+				$support=$_SESSION["console"];
+			}
+			else{
+				$support = $_GET["support"];
+			}
+			
+			$_SESSION["jeu"]=$numJeu;
+			$_SESSION["console"]=$support;
 
 			//recuperer le jeu par son numero de jeu
 			$co = connexion("locagames");
@@ -120,17 +135,27 @@
 						<div id="disponibiliteBJ"><?php echo "Jeux disponibles : ". $nbJeu?></div>
 						<?php 
 						if ($nbJeu>0){
+							if ($session == "notSet"){
 						?>
-							<div class="boutonBJ">	
-								<button type="button" onclick="document.location.href='interfaceClient.php'"/>Louez-moi</button>
-							</div>
+								<div class="boutonBJ">	
+									<button type="button" onclick="document.location.href='connexionInscription.php'"/>Louez-moi</button>
+								</div>
 						<?php 
-						} else { 
+							}
+							else{
 						?>
-						<div class="boutonBJ">
-							<p><mg src="img/indisponible.png" /></p>
-							<p><button type="button" onclick="window.history.back();"/>Retour</button></p>
-						</div>
+								<div class="boutonBJ">	
+									<button type="button" onclick="document.location.href='interfaceClient.php'"/>Louez-moi</button>
+								</div>
+						<?php 
+							}
+						} 
+						else{ 
+						?>
+							<div class="boutonBJ">
+								<p><mg src="img/indisponible.png" /></p>
+								<p><button type="button" onclick="window.history.back();"/>Retour</button></p>
+							</div>
 						<?php 
 						}
 						?>

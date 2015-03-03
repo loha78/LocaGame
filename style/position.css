@@ -86,6 +86,10 @@
 	border-bottom: 1px solid black;
 }
 
+#noClt {
+	padding-top: 60px;
+}
+
 .vide{
 	clear:both;
 	float: bottom ;
