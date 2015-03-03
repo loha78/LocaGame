@@ -33,3 +33,7 @@ function verifFormRecherche(){
 		return false;
 	}
 }
+
+function confDisconnect(){
+	return confirm("Se deconnecter?");
+}

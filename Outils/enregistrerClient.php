@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	include ("Fonction/fonctionPHP.php");
+	include ("../Fonction/fonctionPHP.php");
 	
 	$_SESSION["login"] = $_POST["login"];
 	$login = $_SESSION["login"];
@@ -16,6 +16,6 @@
 	mysqli_query($co, $requeteInsert);
 	mysqli_close($co);
 
-	header('Location: interfaceClient.php');
+	header('Location: ../interfaceClient.php');
 
 ?>

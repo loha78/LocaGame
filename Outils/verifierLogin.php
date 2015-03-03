@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	include "Fonction/fonctionPHP.php";
+	include "../Fonction/fonctionPHP.php";
 	$login = $_POST["login"];
 	$_SESSION["login"] = $login;
 	$mdp = $_POST["password"];
@@ -10,7 +10,12 @@
 	$result = mysqli_query($co, $requete) or die("Requete impossible");
 	if (mysqli_num_rows($result) == 1){
 		$_SESSION["current"] = "logged";
-		header("Location: index.php?login=$login");
+// 		header("Location: ../interfaceClient.php?login=$login");
+		?>
+		<script type="text/javascript">
+			history.back();
+		</script>
+		<?php 
 	}
 	else{
 		?>

@@ -5,67 +5,45 @@ body {
 	background-image: url("background.jpg");
     background-color: #CECECE;
     width: 100%;
+    height: 100%;
 }
 
-#bloc_principal {
-	position: relative;
-	margin: 0 auto;
-	padding: 0;
-	width: 800px;
-	height: 100%;
-	background-color: white ;	
+.menu {  
+	width:649px;
+	background-color: #c0c0c0; 
+	margin-left: -10px;
+	border-bottom: 1px solid black;	
 }
 
-.header {
-	position: relative;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 200px;
-	background: url("../img/banniere_jeux.png"); 
+ul { 
+	margin:0;
+	padding:0;
+	list-style:none;
+	height:35px; 
+	margin:auto;	
 }
 
-#headerClickable {
-	width: 50%;
+li { 
+	display:inline; 
+	float:center;
+	font-size:14px;
+	font-weight:bold;
 }
 
-#formConnexion {
-	text-align:right;
-	color:#c0c0c0;
-	margin:10px;
-	padding-top:110px;
-	padding-left:215px;
+.topMenu {
+	padding-top: 2px;
+	padding-left: 5px;
 }
 
-.titreConnexion {
-	background-color: black;
-}
-
-.client {
-	text-align: right;
-	padding-left:215px;	
-	color:#c0c0c0;
-	margin:10px;
-}
-
-#buttonConnexion {
-	margin-right: 30px;
-}
-
-.lateral {
-	text-align: center;
-	margin: auto;
-	float: left ;
-	width: 20%;
-	height: 100%;
-	border-right: 1px solid black;
-	border-bottom: 1px solid black;
-	background-color: #c0c0c0;
+#rechercheJeu {
+	margin-bottom: 30px;
 }
 
 #lTitre {
 	font-weight: bold;
 	color: #800000;
+	background-color:#c0c0c0;
+	margin-top: 0px; 
 }
 
 .inRecherche {
@@ -73,8 +51,10 @@ body {
 }
 
 .formLib {
+	width: 70%;
 	color:#c0c0c0;
 	background-color: black;
+	text-align: center;
 }
 
 .logo{
@@ -85,12 +65,11 @@ body {
 	margin-bottom: 5px;
 }
 
-
-.central {
-	width : 78%;
-	margin-top: 50px;
-	margin-left: 40px;
-	text-align: left;
+.logoSupport {
+	background-color: white;
+	margin: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 .formulaireEnre {
@@ -105,7 +84,13 @@ body {
 
 .colGauche {
 	float: left;
-	width: 40%
+	width: 45%
+}
+
+#fTitre {
+	font-weight: bold;
+	color: #800000;
+	margin-top: 0px; 
 }
 
 #numRue {
@@ -120,7 +105,7 @@ body {
 #cp {
 	float: right;
 	width: 60px;
-	margin-right: 65px;
+	margin-right: 36px;
 }
 
 #ville {
@@ -130,7 +115,7 @@ body {
 
 .colDroite {
 	float: right;	
-	width: 40%;
+	width: 45%;
 }
 
 .buttonInscription {
@@ -153,7 +138,42 @@ body {
 .imageTab {
 	width=150px;
 }
-.vide{
-	clear:both;
-	float: bottom ;
+
+#blocJeu {
+	padding-top: 10px;
+	padding-left: 10px;
+}
+
+#cover {
+	float: left;
+	width: 178px;
+	border: 1px solid black;
+}
+
+#titleBJ {
+	float: right;
+	width: 70%;
+	color: #800000;
+	text-decoration: underline;
+	font-size: 18pt;
+}
+
+#descriptionBJ {
+	width: 70%;
+	float: right;
+	padding-top: 10px;
+	text-align: justify;
+}
+
+#disponibiliteBJ {
+	padding-top: 15px;
+	font-style: italic;
+	font-size: 10pt;
+	text-align: right;
+	padding-right: 10px;
+}
+
+.boutonBJ {
+	text-align: center;
+	padding-top: 10px;
 }

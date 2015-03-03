@@ -5,9 +5,28 @@
 	<head>
 		<title> LocaGame : Details du Jeu</title>
 		<link rel="stylesheet" type="text/css" href="style/style.css">
-		
+		<link rel="stylesheet" type="text/css" href="style/position.css">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<script type="text/javascript" src="Fonction/verification.js"></script>
 		<?php
+			session_start() ;
 			include "Fonction/fonctionPHP.php";
+			if (isset($_GET["login"])){
+				$login = $_GET["login"];
+			}
+			else{
+				if (isset($_SESSION["login"])){
+					$login=$_SESSION["login"];
+				}
+				else{
+					$login = "";
+				}
+			}
+			
+			if (! isset($_SESSION["current"])){
+				$_SESSION["current"] = "init";
+			}
+		
 
 			$numJeu = $_GET["codeJeu"];
 			$support = $_GET["support"];
@@ -20,74 +39,117 @@
 			$img = $tab["imageJeu"];
 			$title = $tab["titreJeu"];
 			$description = $tab["descriptionJeu"];
+			$descrUtf8 = utf8_encode($description);
 			
 			//recuperer le nombre de jeu disponible
 			$nbJeu = rechercherDispo($co, $numJeu, $support);
 		?>	
 	</head>
+	
 	<body>
 		<!-- Bloc principal de contenu  -->
-		<div class="bloc_central">
-			
+		<div id="bloc_principal">
+					
 			<!--  Bandeau superieur du haut -->
-			<div class="header">
-				<img src="img/banniere_jeux.png" alt="Image d'entête">
-				<div class="formConnexion">
-					<form name="identify" action="#" method="post" >
-					<p>
-						<label>Login</label>
-							<input type="text" name="loginClient" />
-						<label>Mot de passe</label>
-							<input type="text" name="password" />
-						<input type="submit" value="Connexion" />
-					</p>
-					</form>
-				</div>
-				<div class="creerCompte">
-					<a href="nouveauClient.php">Creer un nouveau compte</a>
-				</div>
-			</div>
-		
-			<!--  Barre laterale a gauche -->
-			<div class="lateral">
-				<h2>Selectionner une plateforme ou chercher un jeu:</h2><br/>
-				<form id="rechercherJeu" action="rechercherJeu.php" method="post" onSubmit="return verifFormRecherche();">
-					<label id="formLib"> Titre :</label>
-						<input type="text" name="titre" value="" maxlength="30"/>
-					<label id="formLib"> Plateforme :</label>
-						<select name="support">
-							<option value=null> </option>
-							<option value="1">PlayStation 4</option>
-							<option value="2">XBox One</option>
-						</select>
-					<input type="submit" value="Rechercher"/>
-				</form>
-				<a href="listeJeu.php?support=1"><img id="logoSupport" src="img/PS4/logo_ps4.jpg" alt="Logo de la PS4"></img></a><br/>
-				<a href="listeJeu.php?support=2"><img id="logoSupport" src="img/XB1/logo_xb1.jpg" alt="Logo de la XB1"></img></a>
-			</div>
-	
-			<div class="central">
-				<div id="blocJeu">
-					<div id="cover"><img src='<?php echo $img ?>' width=200px/></div>
-					<div id="title"><?php echo $title?></div>
-					<div id="description"><?php echo $description?></div>
-					<div id="disponibilite"><?php echo "Jeux disponibles : ". $nbJeu?></div>
-					<?php 
-					if ($nbJeu>0){
-					?>
-					<div id="bouton"><input type="submit" value="Louez Moi !" onclick=""/></div>
-					<?php 
-					} else { 
-					?>
-					<div id="bouton"><input type="submit" value="Indisponible" onclick=""/></div>
-					<?php 
+			<header class="header">
+				<?php	
+					if ($_SESSION["current"] == "init"){ 
+				
+				?>	
+					<div id="formConnexion">
+						<form name="identify" action="Outils/verifierLogin.php" method="post" onSubmit=" return verifFormLogin();" >
+						<p>
+							<label class="titreConnexion">Login</label>
+								<input type="text" name="login" /><br/>
+							<label class="titreConnexion">Mot de passe</label>
+								<input type="password" name="password" /><br/>
+							<input id="buttonConnexion" type="submit" value="Connexion" />
+						</p>
+						</form>
+					</div>
+					<div class="client">
+						<a id="nouveauClient" href="nouveauClient.php">Creer un nouveau compte</a>
+					</div>
+				<?php 
 					}
-					?>
+					else{
+				?>
+					<div class="clientHeader">
+						<p id="nouveauClient" >Bienvenue <?php echo $login ?></p> 
+						<form action="Outils/logout.php" name="deconnecter" onSubmit="return confDisconnect()">
+								<input type="submit" name="deconnecter" value="Deconnexion" />
+						</form>
+					</div>
+				<?php 
+					}
+				?>
+			</header>	
+				
+			<section class="section">
+				
+				<!--  Barre laterale a gauche -->
+				<div class="lateral">
+					<p id="lTitre">Selectionner une plateforme ou chercher un jeu: </p>
+					<form name="rechercheJeu" id="rechercheJeu" action="Outils/rechercherJeu.php" method="post" onSubmit="return verifFormRecherche();">
+						<label class="formLib"> Titre </label>
+							<input class="inRecherche" type="text" name="titre" value="" maxlength="30" width=20px/>
+						<label class="formLib"> Plateforme </label>
+							<select name="support">
+								<option value=""> </option>
+								<option value="1">PlayStation 4</option>
+								<option value="2">XBox One</option>
+							</select>
+						<input type="submit" value="Rechercher"/>
+					</form>
+					<div class="logoSupport"><a href="listeJeu.php?support=1"><img class="logo" src="img/PS4/logo_ps4.jpg" alt="Logo de la PS4"></img></a></div>
+					<div class="logoSupport"><a href="listeJeu.php?support=2"><img class="logo" src="img/XB1/logo_xb1.jpg" alt="Logo de la XB1"></img></a></div>
 				</div>
-			</div>
+					
+				<!--  Bloc central de la page -->	
+				<div class="central">
+					<!--  Menu -->
+					<div class="menu"> 
+						<ul> 
+							<li><a href="index.php"><img class="topMenu" src="img/home.png" width="30px"></img></a></li>
+						</ul> 
+					</div>	
+					<div id="blocJeu">
+						<div id="cover"><img src='<?php echo $img ?>' width=178px/></div>
+						<div id="titleBJ"><?php echo $title?></div><br/>
+						<div id="descriptionBJ"><?php echo $descrUtf8?></div>
+						<div id="disponibiliteBJ"><?php echo "Jeux disponibles : ". $nbJeu?></div>
+						<?php 
+						if ($nbJeu>0){
+						?>
+							<div class="boutonBJ">	
+								<button type="button" onclick="document.location.href='interfaceClient.php'"/>Louez-moi</button>
+							</div>
+						<?php 
+						} else { 
+						?>
+						<div class="boutonBJ">
+							<p><mg src="img/indisponible.png" /></p>
+							<p><button type="button" onclick="window.history.back();"/>Retour</button></p>
+						</div>
+						<?php 
+						}
+						?>
+					</div>
+				</div>
+				
+				<div class="vide">
+				
+				</div>
+			</section>
+			
+			<footer class="footer">
+				<div id="copyright">
+					<p >Copyright Jordan et Loha 2015</p>
+				</div>
+			</footer>
 		</div>
+		<?php 
+		mysqli_close($co);
+		?>
 	</body>
 </html>
-<?php 
-mysqli_close($co);
-?>

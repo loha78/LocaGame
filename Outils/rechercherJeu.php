@@ -1,5 +1,5 @@
 <?php
-include "Fonction/fonctionPHP.php";
+include "../Fonction/fonctionPHP.php";
 
 $titreJeu = $_POST["titre"];
 $support = $_POST["support"];
@@ -12,11 +12,11 @@ $tab = mysqli_fetch_assoc($resultat);
 $numJeu =  $tab["numJeu"];
 
 if (mysqli_num_rows($resultat) == 1) {
-	header("Location: detailJeu.php?codeJeu=$numJeu&support=$support");
+	header("Location: ../detailJeu.php?codeJeu=$numJeu&support=$support");
 } else {
 	?>
 	<script type="text/javascript">
-		alert("Jeu non trouvé");
+		alert("Jeu non trouvÃ©");
 		history.back();
 	</script>
 	<?php 

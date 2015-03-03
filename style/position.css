@@ -1,0 +1,105 @@
+@CHARSET "ISO-8859-1";
+
+#bloc_principal {
+	position: relative;
+	margin: auto;
+	padding: 0;
+	width: 800px;
+	height: 100%;	
+}
+
+.header {
+	position: relative;
+	width: 100%;
+	height: 200px;
+	background: url("../img/banniere_jeux.png"); 
+}
+
+#formConnexion {
+	text-align:right;
+	color:#c0c0c0;
+	margin:10px;
+	padding-top:90px;
+	padding-left:215px;
+}
+
+.titreConnexion {
+	background-color: black;
+}
+
+.client {
+	position: absolute;
+	top: 175px;
+	right: 10px;
+	text-align: right;	
+}
+
+.idClient {
+	text-align:right;
+	font-weight: bold;
+	color:#7cf8f1;
+	margin:10px;
+	padding-top:110px;
+	padding-left:215px;
+}
+
+#nouveauClient {
+	color: white;
+	font-style: italic;
+}
+
+.clientHeader {
+	position: absolute;
+	top: 120px;
+	right: 30px;
+	text-align: right;
+}
+
+#buttonConnexion {
+	margin-right: 30px;
+}
+
+.section {
+	background-color: black;
+}
+
+.lateral {
+	display: block;
+	position: relative;
+	float:left;
+	text-align: center;
+	margin: auto;
+	width: 149px;
+	height: auto;
+}
+
+.central {
+	display: block;
+	position: relative;
+	float: right;
+	width : 629px;
+	min-height: 414px;
+	text-align: left;
+	background-color: white;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-bottom: 1px solid black;
+}
+
+.vide{
+	clear:both;
+	float: bottom ;
+}
+
+.footer {
+	float: bottom;
+	background-color: #e6e6e8; 
+}
+
+#copyright {
+	font-size: 10px;
+	font-style: italic;
+	text-align: right;
+	padding-right: 2px;
+}
+

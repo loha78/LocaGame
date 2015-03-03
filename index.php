@@ -6,6 +6,7 @@
 		<title> LocaGame : Site de location de jeux videos </title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<link rel="stylesheet" type="text/css" href="style/style.css">
+		<link rel="stylesheet" type="text/css" href="style/position.css">
 		<script type="text/javascript" src="Fonction/verification.js"></script>
 		<?php 
 			session_start() ;
@@ -14,7 +15,12 @@
 				$login = $_GET["login"];
 			}
 			else{
-				$login = "";
+				if (isset($_SESSION["login"])){
+					$login=$_SESSION["login"];
+				}
+				else{
+					$login = "";
+				}
 			}
 			
 			if (! isset($_SESSION["current"])){
@@ -26,17 +32,16 @@
 	
 	<body>
 		<!-- Bloc principal de contenu  -->
-		<div id="bloc_principal">
-					
+		<div id="bloc_principal">		
+			
 			<!--  Bandeau superieur du haut -->
-			<div class="header">
-				<p><a id="headerClickable" href="index.php"></a></p>
+			<header class="header">
 				<?php	
 					if ($_SESSION["current"] == "init"){ 
 				
 				?>	
 					<div id="formConnexion">
-						<form name="identify" action="verifierLogin.php" method="post" onSubmit=" return verifFormLogin();" >
+						<form name="identify" action="Outils/verifierLogin.php" method="post" onSubmit=" return verifFormLogin();" >
 						<p>
 							<label class="titreConnexion">Login</label>
 								<input type="text" name="login" /><br/>
@@ -47,48 +52,65 @@
 						</form>
 					</div>
 					<div class="client">
-						<a href="nouveauClient.php">Creer un nouveau compte</a>
+						<a id="nouveauClient" href="nouveauClient.php">Creer un nouveau compte</a>
 					</div>
 				<?php 
 					}
 					else{
 				?>
-					<div class="client">
-						Bienvenue <?php echo $login ?> 
-						<form action="logout.php" name="deconnecter">
-							<input type="submit" name="deconnecter" value="Deconnexion" />
+					<div class="clientHeader">
+						<p id="nouveauClient" >Bienvenue <?php echo $login ?></p> 
+						<form action="Outils/logout.php" name="deconnecter" onSubmit="return confDisconnect()">
+								<input type="submit" name="deconnecter" value="Deconnexion" />
 						</form>
 					</div>
 				<?php 
 					}
 				?>
-			</div>	
+			</header>	
 				
-			<!--  Barre laterale a gauche -->
-			<div class="lateral">
-				<p id="lTitre">Selectionner une plateforme ou chercher un jeu: </p>
-				<form name="rechercheJeu" id="rechercheJeu" action="rechercherJeu.php" method="post" onSubmit="return verifFormRecherche();">
-					<label class="formLib"> Titre </label>
-						<input class="inRecherche" type="text" name="titre" value="" maxlength="30" width=20px/>
-					<label class="formLib"> Plateforme </label>
-						<select name="support">
-							<option value=""> </option>
-							<option value="1">PlayStation 4</option>
-							<option value="2">XBox One</option>
-						</select>
-					<input type="submit" value="Rechercher"/>
-				</form>
-				<div class="logoSupport"><a href="listeJeu.php?support=1"><img class="logo" src="img/PS4/logo_ps4.jpg" alt="Logo de la PS4"></img></a></div>
-				<div class="logoSupport"><a href="listeJeu.php?support=2"><img class="logo" src="img/XB1/logo_xb1.jpg" alt="Logo de la XB1"></img></a></div>
-			</div>
+			<section class="section">
 				
-			<!--  Bloc central de la page -->
-			<div class="central">
+				<!--  Barre laterale a gauche -->
+				<div class="lateral">
+					<p id="lTitre">Selectionner une plateforme ou chercher un jeu: </p>
+					<form name="rechercheJeu" id="rechercheJeu" action="Outils/rechercherJeu.php" method="post" onSubmit="return verifFormRecherche();">
+						<label class="formLib"> Titre </label>
+							<input class="inRecherche" type="text" name="titre" value="" maxlength="30" width=20px/>
+						<label class="formLib"> Plateforme </label>
+							<select name="support">
+								<option value=""> </option>
+								<option value="1">PlayStation 4</option>
+								<option value="2">XBox One</option>
+							</select>
+						<input type="submit" value="Rechercher"/>
+					</form>
+					<div class="logoSupport"><a href="listeJeu.php?support=1"><img class="logo" src="img/PS4/logo_ps4.jpg" alt="Logo de la PS4"></img></a></div>
+					<div class="logoSupport"><a href="listeJeu.php?support=2"><img class="logo" src="img/XB1/logo_xb1.jpg" alt="Logo de la XB1"></img></a></div>
+				</div>
+					
+				<!--  Bloc central de la page -->
+				<div class="central">
+					
+					<!--  Menu -->
+					<div class="menu"> 
+						<ul> 
+							<li><a href="index.php"><img class="topMenu" src="img/home.png" width="30px"></img></a></li>
+						</ul> 
+					</div>					
+							
 					<h1> Ici va se trouver le corps de la page</h1>
 					<h3> Des schemas et du blabla et des caractères spéciaux &é"ô%àç </h3>
-			</div>
-				
-			<div class="vide"></div>
+				</div>
+					
+				<div class="vide"></div>
+			</section>
+			
+			<footer class="footer">
+				<div id="copyright">
+					<p >Copyright Jordan et Loha 2015</p>
+				</div>
+			</footer>
 		</div>	
 	</body>
 </html>
