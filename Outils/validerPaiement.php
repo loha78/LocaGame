@@ -9,7 +9,7 @@
 	
 	<body>
 		<?php 
-		echo "<div><img src='img/cb.jpg' alt='logo des cartes bleues' /></div><br/>";
+		echo "<div><img src='../img/cb.jpg' alt='logo des cartes bleues' /></div><br/>";
 		echo " Paiement accepté, veuillez patienter. Redirection en cours.";
 		header ("Refresh: 5;url=../interfaceClient.php");
 		?>

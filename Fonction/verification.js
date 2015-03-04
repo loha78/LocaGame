@@ -37,3 +37,4 @@ function verifFormRecherche(){
 function confDisconnect(){
 	return confirm("Se deconnecter?");
 }
+
