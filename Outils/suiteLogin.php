@@ -12,7 +12,7 @@
 	$result = mysqli_query($co, $requete) or die("Requete impossible");
 	if (mysqli_num_rows($result) == 1){
 		$_SESSION["current"] = "logged";
-		header("Location: ../interfaceClient.php?login=$login&codeJeu=$jeu&support=$support");
+		header("Location: ../interfaceClient.php?login=$login&codeJeu=$jeu&support=$support&loc=1");
 	}
 	else{
 		?>
@@ -22,5 +22,4 @@
 		</script>
 	<?php 
 	}
-
 ?>

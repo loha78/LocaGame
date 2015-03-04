@@ -10,7 +10,7 @@
 	
 	<body>
 		<div><img src="img/cb.jpg" alt="logo des cartes bleues" /></div><br/>
-		<form action="validerPaiement.php" >
+		<form action="Outils/validerPaiement.php" >
 			<p><label>Titulaire</label>
 				<input type="text" value="" /></p>
 			<p><label>Numero de carte</label>
