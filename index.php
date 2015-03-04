@@ -126,8 +126,8 @@
 							<th class="tabTitre"> Prix </td>
 							<td class="tabDonnee"> 7,99€ </td>
 							<td class="tabDonnee"> 19,99€ </td>
-							<td class="tabDonnee"> 6,99€ </td>
-							<td class="tabDonnee"> 17,99€ </td>
+							<td class="tabDonnee"> 7,99€ </td>
+							<td class="tabDonnee"> 19,99€ </td>
 						</tr>
 					</table>
 				</div>
