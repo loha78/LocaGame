@@ -10,6 +10,7 @@
 		<script type="text/javascript" src="Fonction/verification.js"></script>
 		<?php 
 			session_start();
+			include "Fonction/fonctionPHP.php";
 			if (isset($_GET["login"])){
 				$login = $_GET["login"];
 			}
@@ -35,6 +36,25 @@
 			
 			if (isset($_SESSION["support"])){
 				$support=$_SESSION["support"];
+			}
+			
+			$co = connexion("locagames");
+			$resultatTitre = rechercherTitreJeu($co, $numJeu);
+			if (mysqli_num_rows($resultatTitre) == 1){
+				$tab = mysqli_fetch_assoc($resultatTitre);
+				$titreJeu = $tab["titreJeu"];
+			}
+			else{
+				$titreJeu = "jeu inconnu";
+			}
+			
+			$resultatConsole = rechercherConsole($co, $support);
+			if (mysqli_num_rows($resultatConsole) == 1){
+				$tab = mysqli_fetch_assoc($resultatConsole);
+				$console = $tab["nomSupport"];
+			}
+			else{
+				$console = "console inconnue";
 			}
 			
 		?>
@@ -113,7 +133,20 @@
 						</ul> 
 					</div>	
 					<h1> Bienvenue <?php echo $login ?></h1>
-					<p> (test memo à supprimer plus tard) Vous avez choisi le jeu n° <?php echo $numJeu ?> et le support n° <?php echo $support ?></p>
+					<?php 
+						if (isset($_GET["loc"])){
+							echo "<p> (test memo à supprimer plus tard) Vous avez choisi le jeu n° $numJeu et le support n° $support </p>";
+							echo "<form name='confirmLoc' action='paiement.php' method='POST'>";
+							echo "	<p><label> Louer $titreJeu sur $console </label><br/>";
+							echo "  <select name='duree'>";
+							echo " 		<option value='sem'> 1 semaine </option>";
+							echo "		<option value='mois'> 1 mois </option>";
+							echo " 	</select></p>";
+							echo "<p> Tarif = <input type='text' name='choix' value=''/></p>";
+							echo "<button type='button' onclick='window.history.go(-2);'/>Annuler</button>";
+							echo "<input type='submit' value='Confirmer' />";
+						}
+					?>
 					<p>Vos jeux en cours de location:</p>
 					<div>
 						<p> jeu 1 loué le xx/xx à rendre le xx/xx</p>
@@ -130,5 +163,8 @@
 				</div>
 			</footer>
 		</div>
+		<?php 
+		mysqli_close($co);
+		?>
 	</body>
 </html>

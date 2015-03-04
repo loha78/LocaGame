@@ -142,7 +142,7 @@
 							else{
 						?>
 								<div class="boutonBJ">	
-									<button type="button" onclick="document.location.href='interfaceClient.php'"/>Louez-moi</button>
+									<button type="button" onclick="document.location.href='interfaceClient.php?loc=1'"/>Louez-moi</button>
 								</div>
 						<?php 
 							}

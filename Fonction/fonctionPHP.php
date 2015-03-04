@@ -28,4 +28,14 @@ function rechercherDispo($co, $numJeu, $support){
 	return $resultat;
 }
 
+function rechercherTitreJeu($co, $numJeu){
+	$resultat = mysqli_query($co, "Select titreJeu from titre where numJeu = '$numJeu'") or die ("erreur requete rechercherTitreJeu");
+	return $resultat;
+}
+
+function rechercherConsole($co, $support){
+	$resultat = mysqli_query($co, "Select nomSupport from support where numSupport = '$support'") or die ("erreur requete rechercherTitreJeu");
+	return $resultat;
+}
+
 ?>
