@@ -28,4 +28,9 @@ function rechercherDispo($co, $numJeu, $support){
 	return $resultat;
 }
 
+function rechercherHistorique($co, $login){
+	$resultat = mysqli_query($co,"SELECT t.titreJeu, l.dateEnvoi, l.dateRetour FROM location l, exemplaire e, titre t WHERE l.numExemplaire = e.numExemplaire AND e.numJeu = t.numJeu AND login='$login'") or die("erreur requete rechercherJeux");
+	return $resultat;
+}
+
 ?>

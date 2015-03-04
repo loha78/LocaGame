@@ -10,6 +10,8 @@
 		<script type="text/javascript" src="Fonction/verification.js"></script>
 		<?php 
 			session_start();
+			include "Fonction/fonctionPHP.php";
+			
 			if (isset($_GET["login"])){
 				$login = $_GET["login"];
 			}
@@ -37,6 +39,9 @@
 				$support=$_SESSION["support"];
 			}
 			
+			// Recuperer l'historique de location du client
+			$co = connexion("locagames");
+			$resultat = rechercherHistorique($co, $login);
 		?>
 	</head>
 	
@@ -116,8 +121,22 @@
 					<p> (test memo à supprimer plus tard) Vous avez choisi le jeu n° <?php echo $numJeu ?> et le support n° <?php echo $support ?></p>
 					<p>Vos jeux en cours de location:</p>
 					<div>
-						<p> jeu 1 loué le xx/xx à rendre le xx/xx</p>
-						<p> Jeu 2 loué le xx/xx à rendre le xx/xx</p>
+					<?php 
+					
+					$nbLigne = count($resultat);
+					
+					if ($nbLigne == 0){
+						echo "<p>Aucune location existante<p>";
+					} else {
+						while ($tab = mysqli_fetch_assoc($resultat)){
+							$titre = $tab["titreJeu"];
+							$dateEnvoi = $tab["dateEnvoi"];
+							$dateRetour = $tab["dateRetour"];
+							
+							echo "<p>'$titre' loué le '$dateEnvoi' à rendre le '$dateRetour'";
+							}
+					}
+					?>
 					</div>
 				</div>
 				
@@ -130,5 +149,8 @@
 				</div>
 			</footer>
 		</div>
+		<?php 
+		mysqli_close($co);
+		?>
 	</body>
 </html>
