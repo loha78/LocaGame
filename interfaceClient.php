@@ -62,6 +62,27 @@
 			$co = connexion("locagames");
 			$resultat = rechercherHistorique($co, $login);
 		?>
+		
+		<script type="text/javascript">
+			function optionChange(val){
+				if(val.value == "sem"){
+					confirmLoc.choix.value = "7,99€";
+				}
+				else{
+					confirmLoc.choix.value = "19,99€";
+				}
+			}
+
+			function verifFormLouer(){
+				if(confirmLoc.duree.value == ""){
+					alert("Saisir une durée de location!");
+					return false;
+				}
+				else{
+					return true;
+				}
+			}
+		</script>
 	</head>
 	
 	<body>
@@ -139,16 +160,19 @@
 					<h1> Bienvenue <?php echo $login ?></h1>
 					<?php 
 						if (isset($_GET["loc"])){
-							echo "<p> (test memo à supprimer plus tard) Vous avez choisi le jeu n° $numJeu et le support n° $support </p>";
-							echo "<form name='confirmLoc' action='paiement.php?numJeu=$numJeu&support=$support&login=$login' method='POST'>";
-							echo "	<p><label> Louer $titreJeu sur $console </label><br/>";
-							echo "  <select name='duree'>";
+							echo "<div id='louerJeu'>";
+							echo "<form name='confirmLoc' action='paiement.php?numJeu=$numJeu&support=$support&login=$login' method='POST' onsubmit='return verifFormLouer();'>";
+							echo "	<p class='libP'><label> Louer $titreJeu sur $console </label></p>";
+							echo "	<p><label> Durée: </label>";
+							echo "  <select name='duree' onchange='optionChange(this)'>";
+							echo " 		<option value=''> </option>";
 							echo " 		<option value='sem'> 1 semaine </option>";
 							echo "		<option value='mois'> 1 mois </option>";
 							echo " 	</select></p>";
-							echo "<p> Tarif = <input type='text' name='choix' value=''/></p>";
+							echo "<p> Tarif = <input type='text' name='choix' value='' readonly/></p>";
 							echo "<button type='button' onclick='window.history.go(-2);'/>Annuler</button>";
 							echo "<input type='submit' value='Confirmer' />";
+							echo "</div>";
 						}
 					?>
 					<p>Vos jeux en cours de location:</p>
