@@ -197,4 +197,39 @@ li.topMenuTxt {
 	text-align: center;
 }
 
+#tabTarif {
+	border: 2px solid black;
+	width: 550px;
+}
+
+.tabTitre {
+	width: 150px;
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid grey;
+	border-bottom: 1px solid black;
+	text-align: center;
+}
+
+.tabSTitre {
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	border-bottom: 1px solid grey;
+	text-align: center;
+}
+
+th.tabSTitre {
+	width: 200px;
+}
+
+td.tabSTitre {
+	width: 100px;
+}
+
+.tabDonnee {
+	border: 1px solid black;
+	text-align: center;
+}
+
 

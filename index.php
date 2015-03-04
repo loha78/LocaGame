@@ -104,8 +104,32 @@
 						</ul> 
 					</div>					
 							
-					<h1> Ici va se trouver le corps de la page</h1>
-					<h3> Des schemas et du blabla et des caractères spéciaux &é"ô%àç </h3>
+					<h2> Bienvenue sur LocaGame, site de location de jeux videos.</h2>
+					<p> Nous vous proposons un large choix de jeux videos sur PS4 ou Xbox One à louer pour 1 semaine ou 1 mois. </p>
+					<p> A vous de jouer.</p><br/>
+					<table id="tabTarif" >	
+						<caption> Nos tarifs</caption>
+						<tr>
+							<th class="tabTitre"> Console </td>
+							<th class="tabSTitre" colspan=2> PS4</td>
+							<th class="tabSTitre" colspan=2> XBox One</td>
+						</tr>
+						<tr>
+							<th class="tabTitre"> Durée location </td>
+							<td class="tabSTitre"> 1 semaine </td>
+							<td class="tabSTitre"> 1 mois </td>
+							<td class="tabSTitre"> 1 semaine </td>
+							<td class="tabSTitre"> 1 mois </td>
+							
+						</tr>
+						<tr>
+							<th class="tabTitre"> Prix </td>
+							<td class="tabDonnee"> 7,99€ </td>
+							<td class="tabDonnee"> 19,99€ </td>
+							<td class="tabDonnee"> 6,99€ </td>
+							<td class="tabDonnee"> 17,99€ </td>
+						</tr>
+					</table>
 				</div>
 					
 				<div class="vide"></div>
