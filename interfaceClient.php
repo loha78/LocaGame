@@ -113,7 +113,12 @@
 						</ul> 
 					</div>	
 					<h1> Bienvenue <?php echo $login ?></h1>
-					<p> Vous avez choisi le jeu n° <?php echo $numJeu ?> et le support n° <?php echo $support ?></p>
+					<p> (test memo à supprimer plus tard) Vous avez choisi le jeu n° <?php echo $numJeu ?> et le support n° <?php echo $support ?></p>
+					<p>Vos jeux en cours de location:</p>
+					<div>
+						<p> jeu 1 loué le xx/xx à rendre le xx/xx</p>
+						<p> Jeu 2 loué le xx/xx à rendre le xx/xx</p>
+					</div>
 				</div>
 				
 				<div class="vide"></div>
