@@ -165,7 +165,7 @@
 							$dateEnvoi = $tab["dateEnvoi"];
 							$dateRetour = $tab["dateRetour"];
 							
-							echo "<p>'$titre' loué le '$dateEnvoi' à rendre le '$dateRetour'";
+							echo "<p>'$titre' loué le '$dateEnvoi'";
 							}
 					}
 					?>

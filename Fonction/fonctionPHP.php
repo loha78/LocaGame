@@ -43,5 +43,4 @@ function rechercherConsole($co, $support){
 	$resultat = mysqli_query($co, "Select nomSupport from support where numSupport = '$support'") or die ("erreur requete rechercherTitreJeu");
 	return $resultat;
 }
-
 ?>
