@@ -140,7 +140,7 @@
 					<?php 
 						if (isset($_GET["loc"])){
 							echo "<p> (test memo à supprimer plus tard) Vous avez choisi le jeu n° $numJeu et le support n° $support </p>";
-							echo "<form name='confirmLoc' action='paiement.php' method='POST'>";
+							echo "<form name='confirmLoc' action='paiement.php?numJeu=$numJeu&support=$support&login=$login' method='POST'>";
 							echo "	<p><label> Louer $titreJeu sur $console </label><br/>";
 							echo "  <select name='duree'>";
 							echo " 		<option value='sem'> 1 semaine </option>";
