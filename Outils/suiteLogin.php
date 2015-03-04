@@ -4,7 +4,7 @@
 	$login = $_POST["login"];
 	$_SESSION["login"] = $login;
 	$jeu=$_SESSION["jeu"];
-	$support=$_SESSION["console"];
+	$support=$_SESSION["support"];
 	$mdp = $_POST["password"];
 	$requete = "select * from client where login = '$login' and motDePasse = '$mdp'";
 	
@@ -12,7 +12,7 @@
 	$result = mysqli_query($co, $requete) or die("Requete impossible");
 	if (mysqli_num_rows($result) == 1){
 		$_SESSION["current"] = "logged";
-		header("Location: ../detailJeu.php?login=$login&codeJeu=$jeu&support=$support");
+		header("Location: ../interfaceClient.php?login=$login&codeJeu=$jeu&support=$support");
 	}
 	else{
 		?>

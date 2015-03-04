@@ -4,6 +4,13 @@
 	
 	$_SESSION["login"] = $_POST["login"];
 	$login = $_SESSION["login"];
+	if (isset($_SESSION["open"])){
+		$session = $_SESSION["open"];
+	}
+	else{
+		$session = "no";
+	}
+	
 	$nom=  $_POST["nom"];
 	$prenom=  $_POST["prenom"];
 	$mdp=  $_POST["password"];
@@ -16,6 +23,10 @@
 	mysqli_query($co, $requeteInsert);
 	mysqli_close($co);
 
-	header('Location: ../interfaceClient.php');
-
+	if ( $session == "yes"){	
+		header("Location: ../interfaceClient.php?login=$login&codeJeu=$jeu&support=$support");
+	}
+	else{
+		header('Location: ../interfaceClient.php');
+	}
 ?>

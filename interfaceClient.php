@@ -25,6 +25,18 @@
 			if (! isset($_SESSION["current"])){
 				$_SESSION["current"] = "init";
 			}
+			
+			$numJeu="";
+			$support="";
+			
+			if (isset($_SESSION["jeu"])){
+				$numJeu=$_SESSION["jeu"];
+			}
+			
+			if (isset($_SESSION["support"])){
+				$support=$_SESSION["support"];
+			}
+			
 		?>
 	</head>
 	
@@ -93,9 +105,15 @@
 					<div class="menu"> 
 						<ul> 
 							<li><a href="index.php"><img class="topMenu" src="img/home.png" width="30px"></img></a></li>
+					<?php 
+						if ($_SESSION["current"] == "logged"){
+							echo "<li class='topMenuTxt'><a href='interfaceClient.php'> Mon Compte </a></li>";
+						}
+					?>
 						</ul> 
 					</div>	
 					<h1> Bienvenue <?php echo $login ?></h1>
+					<p> Vous avez choisi le jeu n° <?php echo $numJeu ?> et le support n° <?php echo $support ?></p>
 				</div>
 				
 				<div class="vide"></div>

@@ -23,29 +23,21 @@
 				}
 			}
 			
-			$session = "notSet";
 			if (! isset($_SESSION["current"])){
 				$_SESSION["current"] = "init";
-				$session = $_SESSION["current"];
-			}
-		
-			if (isset($_SESSION["jeu"])){
-				$numJeu=$_SESSION["jeu"];
+				$session="init";
 			}
 			else{
-				$numJeu = $_GET["codeJeu"];
+				$session=$_SESSION["current"];
 			}
 			
-			if (isset($_SESSION["console"])){
-				$support=$_SESSION["console"];
-			}
-			else{
-				$support = $_GET["support"];
-			}
 			
-			$_SESSION["jeu"]=$numJeu;
-			$_SESSION["console"]=$support;
-
+			$numJeu = $_GET["codeJeu"];
+			$support = $_GET["support"];
+			
+			$_SESSION["jeu"] = $numJeu;
+			$_SESSION["support"] = $support;
+			
 			//recuperer le jeu par son numero de jeu
 			$co = connexion("locagames");
 
@@ -126,6 +118,11 @@
 					<div class="menu"> 
 						<ul> 
 							<li><a href="index.php"><img class="topMenu" src="img/home.png" width="30px"></img></a></li>
+					<?php 
+						if ($_SESSION["current"] == "logged"){
+							echo "<li class='topMenuTxt'><a href='interfaceClient.php'> Mon Compte </a></li>";
+						}
+					?>
 						</ul> 
 					</div>	
 					<div id="blocJeu">
@@ -135,7 +132,7 @@
 						<div id="disponibiliteBJ"><?php echo "Jeux disponibles : ". $nbJeu?></div>
 						<?php 
 						if ($nbJeu>0){
-							if ($session == "notSet"){
+							if ($session == "init"){
 						?>
 								<div class="boutonBJ">	
 									<button type="button" onclick="document.location.href='connexionInscription.php'"/>Louez-moi</button>

@@ -27,6 +27,10 @@
 				$_SESSION["current"] = "init";
 			}
 			
+			$numJeu = $_SESSION["jeu"];
+			$support = $_SESSION["support"] ;
+			
+			
 		?>
 	</head>
 	
@@ -96,6 +100,11 @@
 					<div class="menu"> 
 						<ul> 
 							<li><a href="index.php"><img class="topMenu" src="img/home.png" width="30px"></img></a></li>
+					<?php 
+						if ($_SESSION["current"] == "logged"){
+							echo "<li class='topMenuTxt'><a href='interfaceClient.php'> Mon Compte </a></li>";
+						}
+					?>
 						</ul> 
 					</div>	
 					
@@ -120,7 +129,7 @@
 					<div class="colDroite" >
 						<div id="noClt">	
 							<p class="libP"> Pas encore client?</p>
-							<p class="libP"> S'inscrire <a class="libP" href="nouveauClient.php">ici</a></p>
+							<p class="libP"> S'inscrire <a class="libP" href="nouveauClient.php?open='yes'">ici</a></p>
 						</div>
 					</div>	
 								

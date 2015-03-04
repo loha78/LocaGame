@@ -27,6 +27,10 @@
 				$_SESSION["current"] = "init";
 			}
 			
+			if (isset ($_GET["open"])){
+				$_SESSION["open"] = $_GET["open"];
+			}
+			
 		?>
 	</head>
 
@@ -96,6 +100,11 @@
 					<div class="menu"> 
 						<ul> 
 							<li><a href="index.php"><img class="topMenu" src="img/home.png" width="30px"></img></a></li>
+					<?php 
+						if ($_SESSION["current"] == "logged"){
+							echo "<li class='topMenuTxt'><a href='interfaceClient.php'> Mon Compte </a></li>";
+						}
+					?>
 						</ul> 
 					</div>	
 					
